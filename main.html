@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>FINAL PROJECT</title>
+  <link rel="stylesheet" href='style.css'/>
+
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <script src="https://d3js.org/d3-geo-projection.v4.js"></script>
+  <script src="https://d3js.org/topojson.v3.js"></script>
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <script src="js/script.js"></script>
+  <script src="js/scatter.js"></script>
+  <script src="js/line-chart.js"></script>
+  <script src="js/bar.js"></script>
+  <script src="js/cards.js"></script>
+  <script src="js/list.js"></script>
+</head>
+
+<body>
+  <header id="header">
+    <h3>VISUALIZING STREAMING TRENDS</h3>
+    <address>
+      <span>Kasidy Fernandes/Abbey Lasaster</span>
+      <span>U0960696 / U1326695 </span>
+    </address>
+    <a href="FinalProcessBook.pdf" target="_blank">Process Book</a>
+    <a href="https://youtu.be/Zl1c3s_NRTQ">Demo Video</a>
+</header>
+
+  <br />
+  <hr />
+  <br />
+  <div class="flex">
+    <div id='form'>
+      <h3>Filter</h3>
+      <label>Media Type</label> <br>
+      <input type='radio' id='filter' name='type' value="0" checked> 
+      <label>Movies</label>
+      <input type='radio' id='filter' name='type' value="1">
+      <label>TV Shows</label> <br><br>
+      <label>Ratings</label> <br>
+      <select name='age' id='filter' class="age">
+        <option value='Allvalues'>All</option>
+        <option value='all'>Everyone</option>
+        <option value='7'>PG</option>
+        <option value='13'>PG-13</option>
+        <option value='16'>NC-17</option>
+        <option value='18'>R</option>
+      </select> <br><br>
+      <label> Ranking System </label> <br>
+      <select name='yaxis' id='filter' class='yaxis'>
+        <option value='RTScore'>Rotten Tomato Rating</option>
+        <option value='IMDb'>IMDb Rating</option>
+      </select> <br> <br>
+      <label>Streaming Platform</label><br>
+      <input type='checkbox' id='plat' name='platform' value="Netflix" checked> 
+      <label>Netflix</label>
+      <input type='checkbox' id='plat' name='platform' value="Hulu" checked> 
+      <label>Hulu</label>
+      <input type='checkbox' id='plat' name='platform' value="Disney" checked> 
+      <label>Disney+</label>
+      <input type='checkbox' id='plat' name='platform' value="Prime" checked> 
+      <label>Prime Video</label><br><br>
+      <h4>Streaming Count </h4>
+      <div class="flex">   
+      <div class='cbox'> <label style="color: #db0000">Netflix</label> <br> <label id="ncount" class='Netflix'></label><br></div>
+      <div class='cbox'>   <label style="color: #3dbb3d">Hulu</label> <br> <label id="hcount" class='Hulu'></label><br></div>
+    </div>
+    <div class="flex">   
+      <div class='cbox' >  <label style="color: #393e8f">Disney+</label> <br> <label id="dcount" class='Disney'></label><br></div>
+      <div class='cbox'>  <label style="color:  #00a8e1">Prime Video</label> <br> <label id="pcount" class='Prime'></label><br></div>
+    </div>
+    </div>
+
+    <div id='graph1'>
+      <h2 style='text-align: center;'>Rating by Year</h2>
+    </div>
+    <div id='list' style='height: 600px'>
+      <h2 style='text-align: center;'>Top Ranked</h2>
+      <table id ='table'>
+        <tbody id='tablebody'></tbody>
+      </table>
+    </div>
+  </div>
+  <div class='flex'>
+    <div id='graph2'></div>
+   <!-- <div id='barchart'></div> -->
+    <div id='cards'></div>
+  </div>
+
+</body>
+</html>
